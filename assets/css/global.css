@@ -12,7 +12,14 @@
 
 .pokemon {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);/*this thing put two columns for the listing to be organized*/
     list-style: none;
     padding: 0;
+}
+
+.pokemon li {
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 0.5rem;
+    padding: 1.5rem;
 }
