@@ -16,7 +16,6 @@
     grid-template-columns: repeat(2, 1fr);/*this thing put two columns for the listing to be organized*/
     list-style: none;
     padding: 0;
-    height: 150px;
 }
 
 .pokemon {
@@ -32,6 +31,7 @@
 
 .details{
     display: flex;
+    flex-direction: row;
 }
 
 .pokemon-type{
