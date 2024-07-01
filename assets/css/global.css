@@ -23,6 +23,12 @@ body{
     }
 }
 
+@media screen and (min-width:576px){
+    .content{
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
 .content h1{
     margin: 0;
 }
@@ -51,10 +57,9 @@ body{
     }
 }
 
-
-@media screen and (min-width:576px){
-    .content{
-        grid-template-columns: repeat(6, 1fr);
+@media screen and (max-width:380px){
+    .cards{
+        grid-template-columns: 1fr;
     }
 }
 
