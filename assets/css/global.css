@@ -29,9 +29,17 @@
     flex-direction: column;
 }
 
+.pokemon p{
+    color: white;
+    margin: 0.5rem 0;
+    font-size: 0.925rem;
+}
+
 .details{
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .pokemon-type{
@@ -44,8 +52,8 @@
 .pokemon-type .type{
     border: 0.5px solid white;
     border-radius: 1.5rem;
-    margin: 0.5rem 0 ;
-    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.4rem;
     font-size: .825rem;
     background-color: rgba(105, 228, 185, 0.5);
     
@@ -54,7 +62,6 @@
 .cards .pokemon .details img {
     max-width: 100%;
     height: 80px;
-    align-items: center;
-    justify-content: space-between;
+    padding-left: 0.525rem;
 }
 
