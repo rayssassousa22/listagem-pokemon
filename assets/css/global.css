@@ -29,27 +29,6 @@ body{
     }
 }
 
-.content h1{
-    margin: 0;
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);/*this thing put two columns for the listing to be organized*/
-    list-style: none;
-    padding: 0;
-}
-
-.pokemon {
-    border: 1px solid black;
-    border-radius: 1.5rem;
-    margin: 0.5rem;
-    padding: 1.5rem 1rem;
-    background-color: #14A06F;
-    color: white;
-    display: flex;
-    flex-direction: column;
-}
 
 @media screen and (min-width:992px){
     .cards{
@@ -62,40 +41,3 @@ body{
         grid-template-columns: 1fr;
     }
 }
-
-.pokemon p{
-    color: white;
-    margin: 0.5rem 0;
-    font-size: 0.925rem;
-}
-
-.details{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.pokemon-type{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: block;
-}
-
-.pokemon-type .type{
-    border: 0.5px solid white;
-    border-radius: 1.5rem;
-    margin-bottom: 0.5rem;
-    padding: 0.4rem;
-    font-size: .825rem;
-    background-color: rgba(105, 228, 185, 0.5);
-    
-}
-
-.cards .pokemon .details img {
-    max-width: 100%;
-    height: 80px;
-    padding-left: 0.525rem;
-}
-
