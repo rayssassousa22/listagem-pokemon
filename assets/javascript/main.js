@@ -3,8 +3,12 @@ const offset = 0; //paginação de pokemons
 const url = 'https://pokeapi.co/api/v2/pokemon?offset=' + offset + '&limit=' + limit; //endereço da qual estou tirando minhas respostas
 
 fetch(url) //função pra pedir isso tudo e retornar minha respostas
-    .then(function (reponse){ //função para quando minha requisição der certo
-        console.log(reponse);
+
+    .then(function (response){ // para evitar encadeamento esse then pega a resposta
+        return response.json();
+    })
+    .then(function(jsonBody){ //esse then recebe a resposta e converte em modificável
+        console.log(jsonBody);
     })
     .catch(function (error) {//funçãopara caso dar errado
         console.log(error);
