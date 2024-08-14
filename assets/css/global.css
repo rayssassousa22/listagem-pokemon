@@ -314,6 +314,21 @@ body{
     box-shadow: 5px 5px black;
 }
 
+.order{
+    display: flex;
+    justify-content: space-between;
+}
+
+.order p ~ p{
+    color: rgb(221, 220, 220);
+    font-weight: normal;
+    font-size: 1.2rem;
+    filter: brightness(1.1);
+    padding: 0.2rem 0.5rem;
+    border-radius: 10px;
+    border: 0.1px solid white;
+}
+
 @media screen and (min-width:992px){
     .content{
         max-width: 992px;

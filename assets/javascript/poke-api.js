@@ -2,6 +2,7 @@ const pokeApi = {} //declarando o objeto para guardar as informações do pokemo
 
 function convertPokeApiToClass (pokeDetail){
     const pokemon = new Pokemon();
+    pokemon.order = pokeDetail.order;
     pokemon.name = pokeDetail.name;
     pokemon.image = pokeDetail.sprites.other.dream_world.front_default;
 
