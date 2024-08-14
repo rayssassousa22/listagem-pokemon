@@ -1,4 +1,4 @@
-const limit = 15; 
+const limit = 10; 
 const offset = 0; 
 const url = 'https://pokeapi.co/api/v2/pokemon?offset=' + offset + '&limit=' + limit; 
 
@@ -14,13 +14,16 @@ const pokemonList = document.getElementById('cards'); //pega a lista que já est
 fetch(url ) //função pra pedir isso tudo e retornar minha respostas
 
     .then((response) => response.json()) 
-    .then((jsonBody) => jsonBody.results) //devolve apenas os resultados e passa pro próximo then as caractérisitica de cada pokemon
+    .then((jsonBody) => {
+        console.log(jsonBody.results);
+        debugger;
+    }) //devolve apenas os resultados e passa pro próximo then as caractérisitica de cada pokemon
     .then((pokemons) => {
         
         //percorre cada pokemon do meu limite substituindo as informações
         for(let i = 0; i < pokemons.length; i++){
             const pokemon = pokemons[i];
-            pokemonList.innerHTML += convertPokemonDetails(pokemon); //adiciona as informações na estrutura da lista declarada no html
+            pokemonList.innerHTML += convertPokemonDetails(pokemon); //adiciona as informações na estrutura da lista declarada
         }
     })
     .catch((error) => console.log(error))
