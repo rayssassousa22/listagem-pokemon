@@ -1,6 +1,4 @@
-const pokeApi = {
-
-} //declarando o objeto para guardar as informações do pokemon em especifico
+const pokeApi = {} //declarando o objeto para guardar as informações do pokemon em especifico
 
 function convertPokeApiToClass (pokeDetail){
     const pokemon = new Pokemon();
@@ -24,9 +22,8 @@ pokeApi.getPokemonDetails = (pokemon) => {
 }
 
 //funcao que vai no url e retorna as informações pro arquivo main
-pokeApi.getPokemons = () => {
-    const limit = 5; 
-    const offset = 0; 
+pokeApi.getPokemons = (offset = 0, limit = 5) => {
+
     const url = 'https://pokeapi.co/api/v2/pokemon?offset=' + offset + '&limit=' + limit; 
 
     return fetch(url)

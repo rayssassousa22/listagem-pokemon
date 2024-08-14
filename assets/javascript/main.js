@@ -1,28 +1,40 @@
+const pokemonList = document.getElementById('cards');
+const loadButton = document.getElementById('script-teste');
 
+const firstGenRecords = 18;
+const limit = 5;
+let offset = 0;
 
 function convertPokemonDetails(pokemon){
     return '<li class="pokemon '+ pokemon.type +'"> <p>' + pokemon.name + '</p><div class="details"><ol class="pokemon-type"> '+ pokemon.types.map((type) => '<li class="type '+ pokemon.type +'">' + type +'</li>').join(' ')  +' </ol><img src="' + pokemon.image + '" alt="'+ pokemon.name+'"></div></li>';
 } 
 
-const pokemonList = document.getElementById('cards');
+function loadPokemonItens(offset, limit){
+    pokeApi.getPokemons(offset,limit).then((pokemons = []) => {
 
+        const newHtml = pokemons.map((pokemons) => convertPokemonDetails(pokemons)).join(' ');
+        pokemonList.innerHTML += newHtml;
+    })
+    .catch((error) => console.log(error));
+}
 
- //pega as informaçoes do arquivo pokeApi e adiciona como manipulaveis no html
-pokeApi.getPokemons().then((pokemons) => {
+loadPokemonItens(offset, limit);
 
-    const newList = pokemons.map((pokemons) => convertPokemonDetails(pokemons))
+loadButton.addEventListener('click', () =>{
+    offset += limit;
+    const qntRecords = offset + limit;
+    
+    if(qntRecords >= firstGenRecords){
+        const newLimit = firstGenRecords - offset;   
+        loadPokemonItens(offset, newLimit);
 
-    const newPokemons = newList.join(' ');
+        
+        loadButton.parentElement.removeChild(loadButton);
 
-    pokemonList.innerHTML += newPokemons;
+    } else {
+        loadPokemonItens(offset, limit);
+    }
+
 })
-.catch((error) => console.log(error));
-
-/*innerHTML x appendChild
-
-o innerhtml trata como texto
-appendChild trata como objeto */
-
-
 
 /* MANIPULAÇÃO DE REQUISIÇÕES USANDO FETCH, PROMISES AND CONVERTENDO OS RESULTADOS*/ 
