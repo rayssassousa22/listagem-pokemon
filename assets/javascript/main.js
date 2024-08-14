@@ -1,13 +1,7 @@
 
-//pega os types de cada pokemon
-function convertPokemonType (pokemonTypes){
-    return pokemonTypes.map((typeSlot) => {
-        return '<li class="type">' +  typeSlot.type.name + '</li>'
-    })
-}
 
 function convertPokemonDetails(pokemon){
-    return '<li class="pokemon"> <p>' + pokemon.name + '</p><div class="details"><ol class="pokemon-type"> '+ convertPokemonType(pokemon.types).join('') +' </ol><img src="' + pokemon.sprites.other.dream_world.front_default + '" alt="'+ pokemon.name+'"></div></li>';
+    return '<li class="pokemon"> <p>' + pokemon.name + '</p><div class="details"><ol class="pokemon-type"> '+ pokemon.types.map((type) => '<li class="type">' + type +'</li>').join(' ')  +' </ol><img src="' + pokemon.image + '" alt="'+ pokemon.name+'"></div></li>';
 } 
 
 const pokemonList = document.getElementById('cards');
