@@ -1,43 +1,23 @@
-const limit = 10; 
-const offset = 0; 
-const url = 'https://pokeapi.co/api/v2/pokemon?offset=' + offset + '&limit=' + limit; 
 
-
-// faz aquela estrutura html dos cards pro console
 function convertPokemonDetails(pokemon){
-    return '<li class="pokemon"> <p>' + pokemon.name + '</p><div class="details"><ol class="pokemon-type"><li class="type">Fire</li></ol><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/6.svg" alt="Charizard"></div></li>';
+    return '<li class="pokemon"> <p>' + pokemon.name + '</p><div class="details"><ol class="pokemon-type"><li class="type">Fire</li></ol><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/6.svg" alt="'+ pokemon.name+'"></div></li>';
 } 
 
-const pokemonList = document.getElementById('cards'); //pega a lista que já estava declarada no html
+const pokemonList = document.getElementById('cards');
 
 
-fetch(url ) //função pra pedir isso tudo e retornar minha respostas
+ //pega as informaçoes do arquivo pokeApi e adiciona como manipulaveis no html
+pokeApi.getPokemons().then((pokemons) => {
 
-    .then((response) => response.json()) 
-    .then((jsonBody) => {
-        console.log(jsonBody.results);
-        debugger;
-    }) //devolve apenas os resultados e passa pro próximo then as caractérisitica de cada pokemon
-    .then((pokemons) => {
-        
-        //percorre cada pokemon do meu limite substituindo as informações
-        for(let i = 0; i < pokemons.length; i++){
-            const pokemon = pokemons[i];
-            pokemonList.innerHTML += convertPokemonDetails(pokemon); //adiciona as informações na estrutura da lista declarada
-        }
-    })
-    .catch((error) => console.log(error))
-    .finally(function(){
-        console.log('concluído');
-    }); 
+    const newList = pokemons.map((pokemons) => convertPokemonDetails(pokemons))
 
+    const newPokemons = newList.join(' ');
 
+    pokemonList.innerHTML += newPokemons;
+})
+.catch((error) => console.log(error));
 
-
-
-
-
-    /*innerHTML x appendChild
+/*innerHTML x appendChild
 
 o innerhtml trata como texto
 appendChild trata como objeto */
