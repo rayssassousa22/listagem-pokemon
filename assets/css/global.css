@@ -16,6 +16,9 @@ body{
     width: 100vw;
     padding: 1rem;
     background-color: white;
+}
+
+.align-itens-center{
     display: flex;
     justify-content: center;
 }
@@ -33,7 +36,7 @@ body{
 
 #cards {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);/*this thing put two columns for the listing to be organized*/
+    grid-template-columns: repeat(1, 1fr);/*this thing put two columns for the listing to be organized*/
     list-style: none;
     padding: 0;
 }
@@ -176,9 +179,9 @@ body{
 }
 
 #pokemon-more-content{
-    background-color: #f6f8fc;
+    background-color: white;
     border-radius: 30px;
-    border-top: 1px solid black;
+    border-top: .5px solid black;
 }
 
 #pokemon-basic-info .poke-image{
@@ -196,15 +199,16 @@ body{
     padding: 1rem 1.5rem;
 }
 
-.pokemon-type{
+.align-types{
     display: flex;
 }
 
-.pokemon-type p{
+.pokemon-type li{
     margin: 0;
+    display: flex;
     margin-right: 1rem;
     padding: 1rem 1.5rem;
-    background-color: #a6a877;
+    border: 1px solid white;
     border-radius: 30px;
     color: white;
     filter: brightness(0.9);
@@ -220,6 +224,7 @@ body{
 
 #pokemon{
     margin-left: 1.5rem;
+    text-transform: capitalize;
 }
 
 .poke-image{
@@ -233,6 +238,80 @@ body{
     height: 80%;
     margin-left: auto;
     margin-right: auto;
+}
+
+#pokemon-more-content{
+    padding-left: 2rem;
+    padding-top: 7rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#pokemon-more-content h2{
+    font-size: 1.5rem;
+    width: fit-content;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin: 0;
+    padding-bottom: 1rem;
+    margin-bottom: 3rem;
+}
+
+#pokemon-more-content h2:hover{
+    cursor: pointer;
+    border-bottom: 5px solid black;
+}
+
+.general-info, #abilities{
+    display: flex;
+}
+
+#abilities li{
+    margin-right: 1rem;
+}
+
+.g-label ul, .g-responses ul, #abilities{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.g-responses ul{
+    margin-left: 5rem;
+}
+
+.g-label ul li{
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: grey;
+    font-family: monospace;
+    font-size: 1.5rem;
+}
+
+.g-responses ul li, #abilities li{
+    margin-bottom: 1rem;
+    font-family: monospace;
+    font-size: 1.5rem;
+}
+
+.interactive-button{
+    width: fit-content;
+    border: 0;
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    margin-top: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.interactive-button:hover{
+    transform: scale(1.1);
+    transition: 2s ease ;
+    cursor: pointer;
+    box-shadow: 5px 5px black;
 }
 
 @media screen and (min-width:992px){

@@ -11,6 +11,13 @@ function convertPokeApiToClass (pokeDetail){
     pokemon.types = types;
     pokemon.type = type;
 
+    const abilities = pokeDetail.abilities.map((abilitySlot) => abilitySlot.ability.name);
+    const [ability] = abilities;
+    
+    pokemon.height = ability;
+    pokemon.weight = pokeDetail.weight;
+    pokemon.height = pokeDetail.height;
+    
     return pokemon;
 }
 
