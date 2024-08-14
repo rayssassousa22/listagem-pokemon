@@ -16,6 +16,8 @@ body{
     width: 100vw;
     padding: 1rem;
     background-color: white;
+    display: flex;
+    justify-content: center;
 }
 
 .pagination{
@@ -160,6 +162,79 @@ body{
     background-color: #f9aec7;
 }
 
+#pokemon-display-details{
+    width: 50%;
+    height: 100vh;
+    border-radius: 30px;
+    background-color: #77c850;
+    display: flex;
+    flex-direction: column;
+}
+
+#pokemon-basic-info, #pokemon-more-content{
+    height: 100%;
+}
+
+#pokemon-more-content{
+    background-color: #f6f8fc;
+    border-radius: 30px;
+    border-top: 1px solid black;
+}
+
+#pokemon-basic-info .poke-image{
+    height: 60%;
+}
+
+#pokemon-basic-info #pokemon, #pokemon-basic-info .control-setting{
+    height: 20%;
+}
+
+#pokemon-basic-info .control-setting p{
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem 1.5rem;
+}
+
+.pokemon-type{
+    display: flex;
+}
+
+.pokemon-type p{
+    margin: 0;
+    margin-right: 1rem;
+    padding: 1rem 1.5rem;
+    background-color: #a6a877;
+    border-radius: 30px;
+    color: white;
+    filter: brightness(0.9);
+    font-weight: bold;
+}
+
+#pokemon h1{
+    margin: 0;
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+#pokemon{
+    margin-left: 1.5rem;
+}
+
+.poke-image{
+    display: flex;
+    position: relative;
+    align-items: flex-end;
+}
+
+.poke-image img{
+    max-width: 100%;
+    height: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    marg
+}
 
 @media screen and (min-width:992px){
     .content{
