@@ -6,7 +6,7 @@ const limit = 10;
 let offset = 0;
 
 function convertPokemonDetails(pokemon){
-    return '<li class="pokemon '+ pokemon.type +'"> <p>' + pokemon.name + '</p><div class="details"><ol class="pokemon-type"> '+ pokemon.types.map((type) => '<li class="type '+ pokemon.type +'">' + type +'</li>').join(' ')  +' </ol><img src="' + pokemon.image + '" alt="'+ pokemon.name+'"></div></li>';
+    return '<a href="/pokemon-details.html"><li class="pokemon '+ pokemon.type +'"> <p>' + pokemon.name + '</p><div class="details"><ol class="pokemon-type"> '+ pokemon.types.map((type) => '<li class="type '+ pokemon.type +'">' + type +'</li>').join(' ')  +' </ol><img src="' + pokemon.image + '" alt="'+ pokemon.name+'"></div></li></a>';
 } 
 
 function loadPokemonItens(offset, limit){
