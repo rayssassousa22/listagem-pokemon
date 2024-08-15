@@ -21,8 +21,9 @@ function showPokemonFullScreen(){
         const moreInfo = pokemons.map((pokemons) => displayPokemonDetailInfo(pokemons)).join(' ');
         pokemonMoreDisplay.innerHTML+= moreInfo;
     })
-    .catch(console.log(error));
+
     
 }
 
 showPokemonFullScreen();
+

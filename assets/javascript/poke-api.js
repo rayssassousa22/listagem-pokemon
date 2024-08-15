@@ -2,7 +2,7 @@ const pokeApi = {} //declarando o objeto para guardar as informações do pokemo
 
 function convertPokeApiToClass (pokeDetail){
     const pokemon = new Pokemon();
-    pokemon.order = pokeDetail.order;
+    pokemon.id = pokeDetail.id;
     pokemon.name = pokeDetail.name;
     pokemon.image = pokeDetail.sprites.other.dream_world.front_default;
 
@@ -12,10 +12,6 @@ function convertPokeApiToClass (pokeDetail){
     pokemon.types = types;
     pokemon.type = type;
 
-    const abilities = pokeDetail.abilities.map((abilitySlot) => abilitySlot.ability.name);
-    const [ability] = abilities;
-    
-    pokemon.height = ability;
     pokemon.weight = pokeDetail.weight;
     pokemon.height = pokeDetail.height;
     
@@ -43,7 +39,7 @@ pokeApi.getPokemons = (offset = 0, limit = 5) => {
     .catch((error) => console.log(error));
 }
 
-pokeApi.getPokemonsDisplayDetails = (offset = 0, limit = 1) => {
+pokeApi.getPokemonsDisplayDetails = (offset = 0, limit) => {
 
     const url = 'https://pokeapi.co/api/v2/pokemon?offset=' + offset + '&limit=' + limit; 
 
