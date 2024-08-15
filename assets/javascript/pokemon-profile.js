@@ -6,5 +6,4 @@ class Pokemon {
     image
     height;
     weight;
-    abilities = []
 }

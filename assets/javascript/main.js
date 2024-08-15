@@ -6,7 +6,7 @@ const limit = 10;
 let offset = 0;
 
 function convertPokemonDetails(pokemon){
-    return '<a href="/pokemon-details.html"><li class="pokemon '+ pokemon.type +'"><div class="order"><p>' + pokemon.name + '</p><p class="'+ pokemon.type+'">#'+ pokemon.order+'</p></div><div class="details"><ol class="pokemon-type"> '+ pokemon.types.map((type) => '<li class="type '+ pokemon.type +'">' + type +'</li>').join(' ')  +' </ol><img src="' + pokemon.image + '" alt="'+ pokemon.name+'"></div></li></a>';
+    return '<a href="pokemon-details.html"><li class="pokemon '+ pokemon.type +'" data-pokemon-id="'+ pokemon.name +'"><div class="order"><p>' + pokemon.name + '</p><p class="'+ pokemon.type+'">#'+ pokemon.order+'</p></div><div class="details"><ol class="pokemon-type"> '+ pokemon.types.map((type) => '<li class="type '+ pokemon.type +'">' + type +'</li>').join(' ')  +' </ol><img src="' + pokemon.image + '" alt="'+ pokemon.name+'"></div></li></a>';
 } 
 
 function loadPokemonItens(offset, limit){
@@ -14,13 +14,15 @@ function loadPokemonItens(offset, limit){
 
         const newHtml = pokemons.map((pokemons) => convertPokemonDetails(pokemons)).join(' ');
         pokemonList.innerHTML += newHtml;
+
+        attachClickEvent(pokemons);
     })
     .catch((error) => console.log(error));
 }
 
 loadPokemonItens(offset, limit);
 
-loadButton.addEventListener('click', () =>{
+loadButton.addEventListener('click',  () =>{
     offset += limit;
     const qntRecords = offset + limit;
     
