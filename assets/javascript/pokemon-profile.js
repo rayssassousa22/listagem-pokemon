@@ -7,3 +7,5 @@ class Pokemon {
     height;
     weight;
 }
+
+//class of the pokemon

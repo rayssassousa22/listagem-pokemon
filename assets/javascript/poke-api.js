@@ -25,7 +25,7 @@ pokeApi.getPokemonDetails = (pokemon) => {
     .then(convertPokeApiToClass)
 }
 
-//funcao que vai no url e retorna as informações pro arquivo main
+
 pokeApi.getPokemons = (offset = 0, limit = 5) => {
 
     const url = 'https://pokeapi.co/api/v2/pokemon?offset=' + offset + '&limit=' + limit; 

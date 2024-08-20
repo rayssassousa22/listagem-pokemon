@@ -2,7 +2,7 @@ const pokemonBasicDisplay = document.getElementById('pokemon-basic-info');
 const pokemonMoreDisplay = document.getElementById('pokemon-more-content');
 
 function displayPokemonBasicInfo (pokemon){
-    return '<div class="control-setting"><a href="/index.html"><p><</p></a></div> <div id="pokemon" data-pokemon-id="'+pokemon.order+'"><h1>' + pokemon.name + '</h1> <div class="pokemon-type align-types ' + pokemon.type + '">' +  pokemon.types.map((type) => '<li class="'+ pokemon.type +'">' + type +'</li>').join(' ') + '</div></div> <div class="poke-image"><img src="' + pokemon.image+ '" alt="' + pokemon.name + '"></div>'
+    return '<div class="control-setting"><a href="index.html"><p><</p></a></div> <div id="pokemon" data-pokemon-id="'+pokemon.order+'"><h1>' + pokemon.name + '</h1> <div class="pokemon-type align-types ' + pokemon.type + '">' +  pokemon.types.map((type) => '<li class="'+ pokemon.type +'">' + type +'</li>').join(' ') + '</div></div> <div class="poke-image"><img src="' + pokemon.image+ '" alt="' + pokemon.name + '"></div>'
 }
 
 function displayPokemonDetailInfo(pokemon){
@@ -26,4 +26,3 @@ function showPokemonFullScreen(){
 }
 
 showPokemonFullScreen();
-

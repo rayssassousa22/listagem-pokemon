@@ -39,5 +39,3 @@ loadButton.addEventListener('click',  () =>{
     }
 
 })
-
-/* MANIPULAÇÃO DE REQUISIÇÕES USANDO FETCH, PROMISES AND CONVERTENDO OS RESULTADOS*/ 
