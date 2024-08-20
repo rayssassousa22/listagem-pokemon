@@ -39,7 +39,7 @@ pokeApi.getPokemons = (offset = 0, limit = 5) => {
     .catch((error) => console.log(error));
 }
 
-pokeApi.getPokemonsDisplayDetails = (offset = 0, limit) => {
+pokeApi.getPokemonsDisplayDetails = (offset = 0, limit = 1) => {
 
     const url = 'https://pokeapi.co/api/v2/pokemon?offset=' + offset + '&limit=' + limit; 
 
