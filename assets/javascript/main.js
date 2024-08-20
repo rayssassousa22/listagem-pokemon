@@ -2,7 +2,7 @@ const pokemonList = document.getElementById('cards');
 const loadButton = document.getElementById('script-teste');
 
 const firstGenRecords = 151;
-const limit = 5;
+const limit = 10;
 let offset = 0;
 
 function convertPokemonDetails(pokemon){
@@ -28,7 +28,7 @@ loadButton.addEventListener('click',  () =>{
     
     
     if(qntRecords >= firstGenRecords){
-        debugger
+    
         const newLimit = firstGenRecords - offset;   
         loadPokemonItens(offset, newLimit);
         loadButton.parentElement.removeChild(loadButton);
