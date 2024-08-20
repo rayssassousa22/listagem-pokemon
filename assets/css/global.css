@@ -355,4 +355,8 @@ body{
     #cards{
         grid-template-columns: 1fr;
     }
+
+    #pokemon-display-details{
+        width: 80%;
+    }
 }
