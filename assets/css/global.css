@@ -329,29 +329,34 @@ body{
     border: 0.1px solid white;
 }
 
-@media screen and (min-width:992px){
+@media only screen and (min-width:1380px){
     .content{
-        max-width: 992px;
+        max-width: 100%;
         margin: 1rem auto;
-        max-height: auto;
+        max-height: 100vh;
         border-radius: 2rem;
+        margin: 0;
+    }
+    #cards{
+        grid-template-columns: repeat(8, 1fr);
     }
 }
 
-@media screen and (min-width:576px){
+@media only screen and (min-width:850px) and (max-width:1379px){
     .content{
-        grid-template-columns: repeat(6, 1fr);
+        max-width: 100%;
+        margin: 1rem auto;
+        max-height: 100vh;
+        border-radius: 2rem;
+        margin: 0;
     }
-}
-
-
-@media screen and (min-width:992px){
     #cards{
         grid-template-columns: repeat(5, 1fr);
     }
 }
 
-@media screen and (min-width:380px){
+
+@media only screen and (min-width:0px) and (max-width:380px){
     #cards{
         grid-template-columns: 1fr;
     }
